@@ -2,24 +2,47 @@
 
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
-###Getting Started###
+# ES6
 
-There are two methods for getting started with this repo.
+* const ("var")
+declaring a variable
+"this is the FINAL variable" (constant)
+we dont reassign
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+## JSX
+
+```HTML
+return <div>Hi!</div>;
+```
+
+# React
+
+import React from 'react';
+//     ^ variable assigned into this file;
+
+//   >> COMPONENT <<
+```
+// JSX
+const App = function() {
+  return <div>Hi!</div>;
+}
+```
 
 ```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
+// ES6
+const App = () => {
+//             ^ fat arrow, same thing that function
+  return <div>Hi!</div>;
+}
 ```
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+
+This :arrow_up: we can interpretate as a Class, not a instance.
 
 ```
-	> npm install
-	> npm start
+ReactDOM.render(<App></App>, xx);
+                             ^ target container
 ```
+:arrow_up: this tells react to render a instance of App, not the class(component) itself.
+
+# Redux
