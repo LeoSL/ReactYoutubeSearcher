@@ -20,7 +20,7 @@ return <div>Hi!</div>;
 import React from 'react';
 //     ^ variable assigned into this file;
 
-//   >> COMPONENT <<
+## COMPONENTS
 ```JSX
 // JSX
 const App = function() {
@@ -62,6 +62,8 @@ class SearchBar extends React.Component {
 ``` 
 ##### ES6 :arrow_down:
 ```ES6
+import React, { Component } from 'react';
+
 class SearchBar extends Component {
   render() {
     return <input />;
