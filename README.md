@@ -70,4 +70,36 @@ class SearchBar extends Component {
   }
 }
 ```
+
+* A function component can contain a class-based component. No problem at all!
+
+## States
+
+* State is a plain Javascript object that is used to record and react to user's events.
+  * Each class-based component has its own *state object*
+  
+* We have to intialize the state inside of a class-constructor method. Ex: `super(props)`.
+  
+* Whenever a component state is changed, the component immediately re-renders - and also forces all of its children to do so.
+
+* Only **class-based components** have states.
+
+```JSX
+this.setState({ term: event.target.value });
+//    ^ the usual function that we use to manipulate the state of a class-based component
+```
+
+### Controlled-component
+A controlled-component has its values set by state:
+```JSX
+<input
+  value = {this.state.searchTerm}
+  onChange = {event => this.setState({ searchTerm: event.target.value })}
+/>
+```
+
+### Events
+* When user types something, it doesn't change the input value, instead, it triggers an event, that changes the state of the component, which finally changes the input value.
+
+
 # Redux
