@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
-import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import VideoList from './components/video_list';
 
 const YOUTUBE_API_KEY = 'AIzaSyA4f2KJBDGKLdSH8g1TVwgaO9KIVf2sXfw';
 
@@ -26,10 +26,9 @@ class App extends Component {
   videoSearch(term) {
     YTSearch({key: YOUTUBE_API_KEY, term: term}, (videos) => {
       this.setState({
-        videos: videos,
+        videos: videos, // this.setState({ videos: videos }); << ES5
         selectedVideo: videos[0]
-      }); // << same thing on ES5
-      // this.setState({ videos }); << ES6
+      });
     });
   }
 
@@ -39,10 +38,12 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSearchTermChange={videoSearch} />
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList
-          onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
-          videos={this.state.videos} />
+        <div className="row">
+          <VideoDetail video={this.state.selectedVideo}/>
+          <VideoList
+            onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
+            videos={this.state.videos} />
+        </div>
       </div>
     );
   }
